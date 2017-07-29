@@ -27,10 +27,7 @@ The goals / steps of this project are the following:
 [prediction]: ./assets/prediction.PNG "Prediction"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
----
-###README
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 #### 1. This writeup includes all the rubric points and how I addressed each one. =
 The link to the [project code](https://github.com/mohanaravind/carND-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
