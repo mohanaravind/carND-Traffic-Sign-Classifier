@@ -19,22 +19,18 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/web/3.jpg "Traffic Sign 1"
 [image5]: ./examples/web/14.jpg "Traffic Sign 2"
 [image6]: ./examples/web/17.jpg "Traffic Sign 3"
 [image7]: ./examples/web/22.jpg "Traffic Sign 4"
 [image8]: ./examples/web/25.jpg "Traffic Sign 5"
-
 [dataset]: ./assets/dataset.png "Data set"
 [lenet]: ./assets/lenet5.png "LeNet"
-[preprocess]: ./assets/preprocess.png "Preprocess"
-[augment]: ./assets/augment.png "Augment"
-[transrot]: ./assets/trans_rot.png "Translate and rotate"
-[visual]: ./assets/visual.png "Visual"
-[prediction]: ./assets/prediction.png "Prediction"
+[preprocess]: ./assets/preprocess.PNG "Preprocess"
+[augment]: ./assets/augment.PNG "Augment"
+[transrot]: ./assets/trans_rot.PNG "Translate and rotate"
+[visual]: ./assets/visual.PNG "Visual"
+[prediction]: ./assets/prediction.PNG "Prediction"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
