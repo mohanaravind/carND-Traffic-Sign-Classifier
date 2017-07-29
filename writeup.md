@@ -1,6 +1,6 @@
-#**Traffic Sign Recognition** 
+# **Traffic Sign Recognition** 
 
-##Writeup Template
+## Writeup Template
 
 ###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
@@ -36,15 +36,14 @@ The goals / steps of this project are the following:
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+###README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+#### 1. This writeup includes all the rubric points and how I addressed each one. =
+The link to the [project code](https://github.com/mohanaravind/carND-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+### Data Set Summary & Exploration
 
-###Data Set Summary & Exploration
-
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Basic summary of the Data Set
 
 I used the numpy library to calculate summary statistics of the traffic signs data set:
 
@@ -54,17 +53,16 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 * The shape of a traffic sign image is **32 x 32**
 * The number of unique classes/labels in the data set is **43**
 
-####2. Visualization of the dataset.
+#### 2. Visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data is spread between different labels we have. One thing that will be obvious looking at the chart is the dataset is biased towards certain labels. We don't have uniform data available for all the labels. This poses the risk of the network not performing well for all labels
 
 ![alt text][dataset]
 
-###Design and Test a Model Architecture
+### Design and Architecture
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-####1. Pre-processing
+#### 1. Pre-processing
 
 ![alt text][preprocess]
 
@@ -78,7 +76,6 @@ I experimented by testing the network with color and without color. There was no
 The image has different intensity based on the lighting condition. To normalize the exposure across all the images I used the skimage's equalize_adapthist to create an equal exposure on the images irrespective of the original exposure. This helps the network detect the curves and patterns better. Since I did not manage to create a vectorized implementation of this step I had to serialize the output to reduce the time it took to retrain after any variation to the inputs. This step usually takes the longest time in the preprocessing pipeline
 
 ##### Augmentation
-
 
 If we look at the dataset we can clearly see that we lack variation and also the amount of data. For deep learning to be successful we need lots of data. It is practically very difficult for me to really travel to Germany and get more pictures of road signs and label it. So a better way was to augment the existing data and build new ones. 
 
@@ -97,9 +94,7 @@ Then I decided to do a simpler augmentation. Trying to zoom in the sign. I achie
 While writing this I just realized I could have reduced the time it took for me to preprocess by doing the preprocessing first and then doing augmentation
 
 
-
-
-####2. Final Model architecture
+#### 2. Final Model architecture
 
 I tested with different architectures. Initially starting with the Lenet architecture and then experimented by adding extra inputs to the final fully connected layer as described in the paper referred above. Passing the convolution outputs from the initial layer while the dataset is not significantly large did not yield better result. So my final architecture became my initial architecture (Lenet)
 
@@ -122,8 +117,7 @@ My final model consisted of the following layers:
 | Softmax				|   											|
  
 
-
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Hyperparameters
 
 To train the model, I used adam optimizer provided by tensorflow
 Defined a class structure to play with the hyperparameters. This makes it convenient to easily pass around the data without having to add a new parameter to the methods.
@@ -143,7 +137,7 @@ The learning rates I tried out were 0.001 and 0.0001 for my model. I did not fin
 This parameter is really useful to avoid over fitting. Regularization using dropout is preferred over other methods. I tried several values for this hyper parameter ranging from 0.3, 0.4, 0.5, 0.6, 0.7 and then settled with 0.6; One must note that I set the keep prob as 1.0 when we are predicting (actual run)
 
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 ###### Training Accuracy = 100 %
