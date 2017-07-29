@@ -1,11 +1,5 @@
 # **Traffic Sign Recognition** 
 
-## Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
@@ -24,7 +18,7 @@ The goals / steps of this project are the following:
 [image6]: ./examples/web/17.jpg "Traffic Sign 3"
 [image7]: ./examples/web/22.jpg "Traffic Sign 4"
 [image8]: ./examples/web/25.jpg "Traffic Sign 5"
-[dataset]: ./assets/dataset.png "Data set"
+[dataset]: ./assets/dataset.PNG "Data set"
 [lenet]: ./assets/lenet5.png "LeNet"
 [preprocess]: ./assets/preprocess.PNG "Preprocess"
 [augment]: ./assets/augment.PNG "Augment"
@@ -186,13 +180,11 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 The model is performing really well on the cases where we have good number of samples available. If we look back at the sample distrubtion bar chart we can clearly see that Road work, Bumpy road signs had really low samples. Stop sign had one of the highest samples and we could clearly see a correlation with the sample size and the prediction confidence
 
 ### Visualizing the Neural Network
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 #### Visualizing the First convolution layer output when network is detecting a no entry sign
 This shows how the initial layer of a convolution layer tries to detect the edges and other primitive feature. We can see the weights/features corresponding to this filter is firing up and we can now visualize them over here
 
 ![alt text][visual]
-
 
 
 
