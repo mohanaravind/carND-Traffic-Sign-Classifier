@@ -41,7 +41,7 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 * The size of training set is **34799**
 * The size of the validation set is **4410**
 * The size of test set is **12630**
-* The shape of a traffic sign image is **32 x 32**
+* The shape of a traffic sign image is **32 x 32 x 3**
 * The number of unique classes/labels in the data set is **43**
 
 #### 2. Visualization of the dataset.
@@ -165,8 +165,7 @@ Here are the results of the prediction:
 | Bumpy road					| Bumpy road											|
 | Road work      		| Bicycles crossing 				|
 
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+Probabilities can be seen below with the prediction graph:
 
 ![alt text][prediction]
 
