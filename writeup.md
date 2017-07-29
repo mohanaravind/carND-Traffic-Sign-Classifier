@@ -145,41 +145,36 @@ My final model results were:
 ###### Test Accuracy = 95 %
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* Initially I t
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
+* Initially I took the approach of using LeNet architecture. This is a simple architecture and has performed well with ImageNet dataset. 
+* The network was overfitting the data. This was observed when validation accuracy was low but training accuracy was high. 
+* To avoid overfitting I added a dropout layer between the two fully connected layers
+* Modifying the learning rate, batch size, epochs and dropout rate were some of the things I did to tune the network
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+* A convolution layer reduces the number of weights one needs to use to train the model. Having a regular fully connected neural network would mean we will have enormous amount of weights that needs to be adjusted
+* Pooling layers helps in down sampling the inputs and thereby makes it easy to manage the training
+* Traffic sign detection is an image detection problem. LeNet seems to be a good candidate to solve it
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
-
-###Test a Model on New Images
-
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+### Test a Model on New Images
 
 Here are five German traffic signs that I found on the web:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The images from the original website were of different sizes. I had to scale them to fit to the size the model accepts (32 x 32).
+The orientation of each of these images are different. Some are tilted or little skewed and that could make it difficult for the network to detect the right sign
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
+| Speed limit (60km/h)      		|  Traffic signals  									| 
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No entry     			| No entry								|
+| Bumpy road					| Bumpy road											|
+| Road work      		| Bicycles crossing 				|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
@@ -188,30 +183,20 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 ![alt text][prediction]
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The model is performing really well on the cases where we have good number of samples available. If we look back at the sample distrubtion bar chart we can clearly see that Road work, Bumpy road signs had really low samples. Stop sign had one of the highest samples and we could clearly see a correlation with the sample size and the prediction confidence
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+### Visualizing the Neural Network
+#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+#### Visualizing the First convolution layer output when network is detecting a no entry sign
+This shows how the initial layer of a convolution layer tries to detect the edges and other primitive feature. We can see the weights/features corresponding to this filter is firing up and we can now visualize them over here
 
 ![alt text][visual]
 
 
 
-##References
-###Pre-Processing
+
+## References
 * [http://sebastianraschka.com/Articles/2014_about_feature_scaling.html](http://sebastianraschka.com/Articles/2014_about_feature_scaling.html)
 * [https://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale](https://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale)
 * [https://github.com/gwding/draw_convnet](https://github.com/gwding/draw_convnet)
