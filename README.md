@@ -131,7 +131,7 @@ The learning rates I tried out were 0.001 and 0.0001 for my model. I did not fin
 This parameter is really useful to avoid over fitting. Regularization using dropout is preferred over other methods. I tried several values for this hyper parameter ranging from 0.3, 0.4, 0.5, 0.6, 0.7 and then settled with 0.6; One must note that I set the keep prob as 1.0 when we are predicting (actual run)
 
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4.The Solution
 
 My final model results were:
 ###### Training Accuracy = 100 %
@@ -158,8 +158,6 @@ Here are five German traffic signs that I found on the web:
 The images from the original website were of different sizes. I had to scale them to fit to the size the model accepts (32 x 32).
 The orientation of each of these images are different. Some are tilted or little skewed and that could make it difficult for the network to detect the right sign
 
-2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
@@ -172,8 +170,6 @@ Here are the results of the prediction:
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
-
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 ![alt text][prediction]
 
